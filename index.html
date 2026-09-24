@@ -15,10 +15,10 @@
       color: white;
       font-family: 'Arial', sans-serif;
       text-align: center;
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
-    /* TITLE SCREEN */
+    /* FULL-SCREEN TITLE SLIDE CONTAINER */
     #title-screen {
       position: fixed;
       top: 0;
@@ -26,12 +26,45 @@
       width: 100vw;
       height: 100vh;
       background-color: #0d0826;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       z-index: 100;
-      padding: 20px;
+      overflow: hidden;
+    }
+
+    /* TITLE GRAPHIC (Fills Whole Screen) */
+    .title-graphic {
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain; /* Scales image as large as possible without cropping */
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    /* FLOATING START BUTTON OVERLAY */
+    .btn-main {
+      background: #ffd700;
+      color: #0d0826;
+      border: 2px solid #ffffff;
+      padding: 16px 45px;
+      font-size: 24px;
+      font-weight: bold;
+      border-radius: 40px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 215, 0, 0.6);
+      transition: transform 0.1s, background 0.2s;
+    }
+    .btn-main:hover {
+      background: #e6c200;
+      transform: translateX(-50%) scale(1.05) !important;
+    }
+
+    #start-btn {
+      position: absolute;
+      bottom: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
     }
 
     /* INITIAL CLICK OVERLAY FOR AUDIO */
@@ -39,41 +72,15 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(13, 8, 38, 0.9);
+      width: 100vw;
+      height: 100vh;
+      background: rgba(13, 8, 38, 0.85);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       z-index: 10;
       cursor: pointer;
-    }
-
-    .title-graphic {
-      max-width: 90vw;
-      max-height: 65vh;
-      object-fit: contain;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-      margin-bottom: 20px;
-    }
-
-    .btn-main {
-      background: #ffd700;
-      color: #0d0826;
-      border: none;
-      padding: 18px 45px;
-      font-size: 24px;
-      font-weight: bold;
-      border-radius: 40px;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
-      transition: transform 0.1s, background 0.2s;
-    }
-    .btn-main:hover {
-      background: #e6c200;
-      transform: scale(1.03);
     }
 
     /* QUIZ SCREEN */
@@ -145,7 +152,10 @@
       <p style="font-size: 18px; color: #aaa;">(Enables opening theme music on title screen)</p>
     </div>
 
-    <img src="https://lh3.googleusercontent.com/d/1cxjwOxjMY7K4npWSxeQAQe02pH86970p" alt="Quiz Show Title" class="title-graphic">
+    <!-- Full-screen Graphic -->
+    <img src="title.jpg" alt="Quiz Show Title" class="title-graphic">
+    
+    <!-- Floating Start Button -->
     <button id="start-btn" class="btn-main" onclick="startQuiz()">Start Quiz</button>
   </div>
 
@@ -164,7 +174,7 @@
 
       <div id="feedback-area">
         <div id="feedback-text"></div>
-        <button id="next-btn" class="btn-main" onclick="nextQuestion()">Next Question ➔</button>
+        <button id="next-btn" class="btn-main" style="position:relative; left:0; transform:none;" onclick="nextQuestion()">Next Question ➔</button>
       </div>
     </div>
 
@@ -172,7 +182,7 @@
     <div id="end-screen">
       <h1 style="color: #ffd700; font-size: 42px;">Quiz Completed!</h1>
       <p style="font-size: 24px; color: #aaa;" id="final-score"></p>
-      <button class="btn-main" onclick="location.reload()">Play Again</button>
+      <button class="btn-main" style="position:relative; left:0; transform:none;" onclick="location.reload()">Play Again</button>
     </div>
   </div>
 
@@ -221,8 +231,9 @@
       stopAllAudio();
       sounds.letsPlay.play().catch(() => {});
 
-      document.getElementById('start-btn').disabled = true;
-      document.getElementById('start-btn').innerText = 'Get Ready...';
+      const startBtn = document.getElementById('start-btn');
+      startBtn.disabled = true;
+      startBtn.innerText = 'Get Ready...';
 
       setTimeout(() => {
         document.getElementById('title-screen').style.display = 'none';
