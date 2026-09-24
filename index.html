@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Who Wants to Be a Retiree?</title>
+  <title>Party Quiz Show</title>
   <style>
     * { box-sizing: border-box; }
     html, body {
@@ -11,235 +11,180 @@
       padding: 0;
       width: 100vw;
       height: 100vh;
-      background: radial-gradient(circle at center, #111a4e 0%, #05071a 70%, #02030a 100%);
+      background-color: #0d0826;
       color: white;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      overflow: hidden;
-      user-select: none;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      overflow-x: hidden;
     }
 
-    /* FULL-PAGE TITLE SLIDE */
+    /* TITLE SCREEN */
     #title-screen {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: #05071a;
+      background-color: #0d0826;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       z-index: 100;
+      padding: 20px;
+    }
+
+    /* INITIAL CLICK OVERLAY FOR AUDIO */
+    #audio-unlock-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(13, 8, 38, 0.9);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
       cursor: pointer;
     }
 
-    .title-image-full {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover; /* Fill whole page edge-to-edge */
-      object-position: center;
+    .title-graphic {
+      max-width: 90vw;
+      max-height: 65vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      margin-bottom: 20px;
     }
 
-    .start-prompt {
-      position: absolute;
-      bottom: 30px;
-      background: rgba(13, 24, 76, 0.85);
-      border: 2px solid #ffd700;
-      color: #ffd700;
-      padding: 12px 30px;
-      border-radius: 30px;
-      font-size: 20px;
+    .btn-main {
+      background: #ffd700;
+      color: #0d0826;
+      border: none;
+      padding: 18px 45px;
+      font-size: 24px;
       font-weight: bold;
-      letter-spacing: 1px;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-      animation: pulse 1.8s infinite;
+      border-radius: 40px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+      transition: transform 0.1s, background 0.2s;
+    }
+    .btn-main:hover {
+      background: #e6c200;
+      transform: scale(1.03);
     }
 
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.9; }
-      50% { transform: scale(1.05); opacity: 1; }
-      100% { transform: scale(1); opacity: 0.9; }
+    /* QUIZ SCREEN */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
-
-    /* MAIN STAGE */
-    .stage {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      padding-bottom: 50px;
-      background: radial-gradient(circle at center, #1b266d 0%, #070a24 65%, #010208 100%);
-    }
-
-    .meta-bar {
-      position: absolute;
-      top: 30px;
-      font-size: 28px;
-      font-weight: bold;
+    .meta-info {
+      font-size: 24px;
       color: #ffd700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      margin-bottom: 15px;
+      font-weight: bold;
     }
-
-    /* TV METALLIC LOZENGE SHAPES */
-    .lozenge-outer {
-      background: linear-gradient(180deg, #8b9dc3 0%, #ffffff 50%, #4a5c80 100%);
-      padding: 3px;
-      clip-path: polygon(28px 0%, calc(100% - 28px) 0%, 100% 50%, calc(100% - 28px) 100%, 28px 100%, 0% 50%);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.8);
-      transition: all 0.3s ease;
-    }
-
-    .lozenge-inner {
-      background: linear-gradient(180deg, #0a133f 0%, #030617 50%, #0a164c 100%);
-      clip-path: polygon(26px 0%, calc(100% - 26px) 0%, 100% 50%, calc(100% - 26px) 100%, 26px 100%, 0% 50%);
-      display: flex;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-      padding: 0 35px;
-    }
-
-    /* QUESTION BOX */
-    .question-wrapper {
-      width: 90vw;
-      max-width: 1100px;
-      height: 110px;
+    .question-box {
+      border: 2px solid #3a4a9f;
+      background: #121945;
+      padding: 30px;
+      border-radius: 12px;
+      font-size: 26px;
       margin-bottom: 25px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
     }
-
-    .question-text {
-      font-size: 28px;
-      font-weight: 600;
-      text-align: center;
-      width: 100%;
-      color: #ffffff;
-      line-height: 1.3;
-    }
-
-    /* OPTIONS GRID */
     .options-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      width: 90vw;
-      max-width: 1100px;
+      gap: 15px;
     }
-
-    .option-wrapper {
-      height: 75px;
+    .option-btn {
+      background: #1a235a;
+      border: 2px solid #4d5dbf;
+      color: white;
+      padding: 20px;
+      font-size: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: left;
     }
-
-    .option-content {
+    .option-btn:hover:not(:disabled) {
+      background: #d47a00;
+    }
+    .correct-choice {
+      background: #1b7e36 !important;
+      border-color: #27ae60 !important;
+    }
+    .wrong-choice {
+      background: #a92020 !important;
+      border-color: #e74c3c !important;
+    }
+    #feedback-area {
+      margin-top: 25px;
+      min-height: 90px;
+    }
+    #feedback-text {
       font-size: 24px;
-      font-weight: 500;
-    }
-
-    .opt-label {
-      color: #ff9d00;
       font-weight: bold;
-      margin-right: 12px;
+      margin-bottom: 15px;
     }
-
-    .opt-value {
-      color: #ffffff;
-    }
-
-    /* CORRECT REVEAL ANIMATION */
-    .correct-reveal .lozenge-outer {
-      background: linear-gradient(180deg, #2ecc71 0%, #ffffff 50%, #1e8449 100%) !important;
-      animation: glowPulse 1s infinite alternate;
-    }
-
-    .correct-reveal .lozenge-inner {
-      background: linear-gradient(180deg, #196f3d 0%, #0e3a20 50%, #1e8449 100%) !important;
-    }
-
-    .correct-reveal .opt-label,
-    .correct-reveal .opt-value {
-      color: #ffffff !important;
-      text-shadow: 0 0 10px rgba(255,255,255,0.8);
-    }
-
-    @keyframes glowPulse {
-      from { filter: drop-shadow(0 0 10px #2ecc71); }
-      to { filter: drop-shadow(0 0 25px #2ecc71); }
-    }
-
-    /* END SCREEN */
-    #end-screen {
-      display: none;
-      text-align: center;
-    }
-
-    #quiz-stage { display: none; }
+    #quiz-screen, #end-screen, #next-btn { display: none; }
   </style>
 </head>
 <body>
 
-  <!-- FULL-PAGE TITLE SLIDE -->
-  <div id="title-screen" onclick="handlePresentationClick()">
-    <img src="title.jpg" alt="Title Slide" class="title-image-full" onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';">
-    <div id="fallback-title" style="display:none; font-size:48px; color:#ffd700; font-weight:bold;">WHO WANTS TO BE A RETIREE?</div>
-    <div class="start-prompt">CLICK OR PRESS SPACEBAR TO START SHOW</div>
+  <!-- TITLE SCREEN -->
+  <div id="title-screen">
+    <!-- Overlay prompt to guarantee sound unlocks -->
+    <div id="audio-unlock-overlay" onclick="unlockAudio()">
+      <p style="font-size: 32px; color: #ffd700; margin-bottom: 10px; font-weight: bold;">🔊 CLICK ANYWHERE TO START MUSIC</p>
+      <p style="font-size: 18px; color: #aaa;">(Enables opening theme music on title screen)</p>
+    </div>
+
+    <img src="https://lh3.googleusercontent.com/d/1cxjwOxjMY7K4npWSxeQAQe02pH86970p" alt="Quiz Show Title" class="title-graphic">
+    <button id="start-btn" class="btn-main" onclick="startQuiz()">Start Quiz</button>
   </div>
 
-  <!-- TV QUIZ STAGE -->
-  <div id="quiz-stage" class="stage" onclick="handlePresentationClick()">
-    <div id="progress" class="meta-bar">Question 1</div>
+  <!-- QUIZ CONTAINER -->
+  <div class="container">
+    <div id="quiz-screen">
+      <div id="progress" class="meta-info">Question 1</div>
+      <div id="question" class="question-box">Loading...</div>
+      
+      <div class="options-grid">
+        <button class="option-btn" id="btnA" onclick="checkAnswer('A')"></button>
+        <button class="option-btn" id="btnB" onclick="checkAnswer('B')"></button>
+        <button class="option-btn" id="btnC" onclick="checkAnswer('C')"></button>
+        <button class="option-btn" id="btnD" onclick="checkAnswer('D')"></button>
+      </div>
 
-    <!-- QUESTION BOX -->
-    <div class="lozenge-outer question-wrapper">
-      <div class="lozenge-inner">
-        <div id="question-text" class="question-text">Loading question...</div>
+      <div id="feedback-area">
+        <div id="feedback-text"></div>
+        <button id="next-btn" class="btn-main" onclick="nextQuestion()">Next Question ➔</button>
       </div>
     </div>
 
-    <!-- 4 OPTION BOXES -->
-    <div class="options-grid">
-      <div id="box-A" class="lozenge-outer option-wrapper">
-        <div class="lozenge-inner option-content">
-          <span class="opt-label">• A:</span><span id="text-A" class="opt-value"></span>
-        </div>
-      </div>
-      <div id="box-B" class="lozenge-outer option-wrapper">
-        <div class="lozenge-inner option-content">
-          <span class="opt-label">• B:</span><span id="text-B" class="opt-value"></span>
-        </div>
-      </div>
-      <div id="box-C" class="lozenge-outer option-wrapper">
-        <div class="lozenge-inner option-content">
-          <span class="opt-label">• C:</span><span id="text-C" class="opt-value"></span>
-        </div>
-      </div>
-      <div id="box-D" class="lozenge-outer option-wrapper">
-        <div class="lozenge-inner option-content">
-          <span class="opt-label">• D:</span><span id="text-D" class="opt-value"></span>
-        </div>
-      </div>
+    <!-- END SCREEN -->
+    <div id="end-screen">
+      <h1 style="color: #ffd700; font-size: 42px;">Quiz Completed!</h1>
+      <p style="font-size: 24px; color: #aaa;" id="final-score"></p>
+      <button class="btn-main" onclick="location.reload()">Play Again</button>
     </div>
   </div>
 
-  <!-- END SCREEN -->
-  <div id="end-screen" class="stage" onclick="location.reload()">
-    <h1 style="font-size: 56px; color: #ffd700; margin-bottom: 20px; text-shadow: 0 0 20px rgba(255,215,0,0.6);">QUIZ COMPLETED!</h1>
-    <p style="font-size: 28px; color: #ccc;">Thank you for playing!</p>
-    <div class="start-prompt" style="position:relative; margin-top:40px;">CLICK TO RESTART</div>
-  </div>
-
-  <!-- External Questions File -->
+  <!-- Load Questions File -->
   <script src="questions.js"></script>
 
   <script>
-    // State Engine: TITLE -> QUESTION_HIDDEN -> QUESTION_REVEALED -> END
-    let currentState = 'TITLE';
     let currentIndex = 0;
+    let score = 0;
+    let audioUnlocked = false;
 
-    // Audio Files
+    // Local Audio Objects
     const sounds = {
       opening: new Audio('opening.mp3'),
       letsPlay: new Audio('lets-play.mp3'),
@@ -252,95 +197,115 @@
     sounds.question.loop = true;
 
     function stopAllAudio() {
-      Object.values(sounds).forEach(a => {
-        try { a.pause(); a.currentTime = 0; } catch(e){}
+      Object.values(sounds).forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0;
       });
     }
 
-    // Presentation Click / Remote Control Handler
-    function handlePresentationClick() {
-      if (currentState === 'TITLE') {
-        startQuiz();
-      } else if (currentState === 'QUESTION_HIDDEN') {
-        revealAnswer();
-      } else if (currentState === 'QUESTION_REVEALED') {
-        nextQuestion();
+    // Step 1: Unlock audio and start theme music
+    function unlockAudio() {
+      if (!audioUnlocked) {
+        audioUnlocked = true;
+        document.getElementById('audio-unlock-overlay').style.display = 'none';
+        sounds.opening.play().catch(err => console.log('Audio error:', err));
       }
     }
 
-    // Keyboard controls (Spacebar, Enter, Right Arrow)
-    window.addEventListener('keydown', function(e) {
-      if (['Space', 'Enter', 'ArrowRight'].includes(e.code) || e.keyCode === 32) {
-        e.preventDefault();
-        handlePresentationClick();
-      }
-    });
-
+    // Step 2: Stop theme music and start quiz transition
     function startQuiz() {
-      stopAllAudio();
-      sounds.letsPlay.play().catch(()=>{});
+      if (!audioUnlocked) {
+        unlockAudio();
+      }
 
-      document.getElementById('title-screen').style.display = 'none';
-      document.getElementById('quiz-stage').style.display = 'flex';
+      stopAllAudio();
+      sounds.letsPlay.play().catch(() => {});
+
+      document.getElementById('start-btn').disabled = true;
+      document.getElementById('start-btn').innerText = 'Get Ready...';
 
       setTimeout(() => {
-        loadQuestion(0);
-      }, 2500);
+        document.getElementById('title-screen').style.display = 'none';
+        document.getElementById('quiz-screen').style.display = 'block';
+        showQuestion();
+      }, 3000);
     }
 
-    function loadQuestion(index) {
-      if (index >= quizQuestions.length) {
+    function showQuestion() {
+      if (currentIndex >= quizQuestions.length) {
         finishQuiz();
         return;
       }
 
-      currentIndex = index;
-      currentState = 'QUESTION_HIDDEN';
-      clearHighlights();
+      resetOptionButtons();
+      document.getElementById('feedback-text').innerText = '';
+      document.getElementById('next-btn').style.display = 'none';
 
       stopAllAudio();
-      sounds.question.play().catch(()=>{});
+      sounds.question.play().catch(() => {});
 
       const q = quizQuestions[currentIndex];
       document.getElementById('progress').innerText = `Question ${currentIndex + 1} of ${quizQuestions.length}`;
-      document.getElementById('question-text').innerText = q.question;
-      document.getElementById('text-A').innerText = q.options.A;
-      document.getElementById('text-B').innerText = q.options.B;
-      document.getElementById('text-C').innerText = q.options.C;
-      document.getElementById('text-D').innerText = q.options.D;
+      document.getElementById('question').innerText = q.question;
+      document.getElementById('btnA').innerText = `A: ${q.options.A}`;
+      document.getElementById('btnB').innerText = `B: ${q.options.B}`;
+      document.getElementById('btnC').innerText = `C: ${q.options.C}`;
+      document.getElementById('btnD').innerText = `D: ${q.options.D}`;
     }
 
-    function revealAnswer() {
-      currentState = 'QUESTION_REVEALED';
+    function checkAnswer(selected) {
       stopAllAudio();
-      sounds.reveal.play().catch(()=>{});
+      sounds.reveal.play().catch(() => {});
 
       const q = quizQuestions[currentIndex];
-      const correctOpt = q.answer.toUpperCase();
-      const targetBox = document.getElementById('box-' + correctOpt);
+      const isCorrect = (selected === q.answer.toUpperCase());
 
-      if (targetBox) {
-        targetBox.classList.add('correct-reveal');
+      if (isCorrect) score++;
+
+      ['A', 'B', 'C', 'D'].forEach(opt => {
+        const btn = document.getElementById('btn' + opt);
+        btn.disabled = true;
+        if (opt === q.answer.toUpperCase()) {
+          btn.classList.add('correct-choice');
+        } else if (opt === selected && !isCorrect) {
+          btn.classList.add('wrong-choice');
+        }
+      });
+
+      const feedback = document.getElementById('feedback-text');
+      if (isCorrect) {
+        feedback.style.color = '#27ae60';
+        feedback.innerText = 'Correct!';
+      } else {
+        feedback.style.color = '#e74c3c';
+        feedback.innerText = `Wrong! Correct answer was ${q.answer}`;
       }
+
+      const nextBtn = document.getElementById('next-btn');
+      nextBtn.innerText = (currentIndex === quizQuestions.length - 1) ? 'See Final Score ➔' : 'Next Question ➔';
+      nextBtn.style.display = 'inline-block';
     }
 
     function nextQuestion() {
-      loadQuestion(currentIndex + 1);
+      currentIndex++;
+      showQuestion();
     }
 
-    function clearHighlights() {
+    function resetOptionButtons() {
       ['A', 'B', 'C', 'D'].forEach(opt => {
-        document.getElementById('box-' + opt).classList.remove('correct-reveal');
+        const btn = document.getElementById('btn' + opt);
+        btn.disabled = false;
+        btn.className = 'option-btn';
       });
     }
 
     function finishQuiz() {
-      currentState = 'END';
       stopAllAudio();
-      sounds.ending.play().catch(()=>{});
+      sounds.ending.play().catch(() => {});
 
-      document.getElementById('quiz-stage').style.display = 'none';
-      document.getElementById('end-screen').style.display = 'flex';
+      document.getElementById('quiz-screen').style.display = 'none';
+      document.getElementById('end-screen').style.display = 'block';
+      document.getElementById('final-score').innerText = `You scored ${score} out of ${quizQuestions.length}!`;
     }
   </script>
 </body>
