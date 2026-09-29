@@ -1,52 +1,62 @@
 const quizQuestions = [
   {
-    question: "The ruins of Urquhart Castle stand on the banks of which famous Scottish loch?",
+    question: "What does Pam call surveillance equipment?",
     options: {
-      A: "Loch Lomond",
-      B: "Loch Ness",
-      C: "Loch Broom",
-      D: "Loch Maree"
+      A: "CCTV",
+      B: "CTV",
+      C: "Camera Thingy’s",
+      D: "Video surveillance"
     },
     answer: "B"
   },
   {
-    question: "In what year was the Beatles album 'Abbey Road' released?",
+    question: "You realise your eyesight is failing and you can no longer read your emails. Do you:",
     options: {
-      A: "1967",
-      B: "1969",
-      C: "1971",
-      D: "1973"
+      A: "Magnify your screen",
+      B: "Use a magnifying glass",
+      C: "Get your eyes tested",
+      D: "Increase your font size for everyone"
     },
-    answer: "B"
+    answer: "D"
   },
   {
-    question: "Which actor played James Bond in the 1964 film 'Goldfinger'?",
+    question: "In Pam Bain years how old is John Macbeath?",
     options: {
-      A: "Roger Moore",
-      B: "George Lazenby",
-      C: "Sean Connery",
-      D: "Timothy Dalton"
+      A: "28",
+      B: "38",
+      C: "48",
+      D: "58"
     },
     answer: "C"
   },
   {
-    question: "What is the capital city of Australia?",
+    question: "What is Pam’s most essential piece of office equipment?",
     options: {
-      A: "Sydney",
-      B: "Melbourne",
-      C: "Canberra",
-      D: "Brisbane"
+      A: "Wireless plug in head phones.",
+      B: "Stapler",
+      C: "Laminator",
+      D: "Coffee machine"
+    },
+    answer: "A"
+  },
+  {
+    question: "If you feel a teams meeting was a waste of time do you:",
+    options: {
+      A: "Say goodbye and hang up",
+      B: "Wave and hang up",
+      C: "State ‘that was a load of shite and stay on call’",
+      D: "Drop a message in the chat then hang up"
     },
     answer: "C"
   },
   {
-    question: "Which element on the periodic table has the chemical symbol 'Au'?",
+    question: "How does Pam rate the current parents evening setup?",
     options: {
-      A: "Silver",
-      B: "Gold",
-      C: "Copper",
-      D: "Aluminum"
+      A: "Excellent",
+      B: "Good",
+      C: "Average",
+      D: "The worst setup in her whole career"
     },
-    answer: "B"
+    answer: "D"
   }
 ];
