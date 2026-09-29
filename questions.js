@@ -44,7 +44,7 @@ const quizQuestions = [
     options: {
       A: "Say goodbye and hang up",
       B: "Wave and hang up",
-      C: "State ‘that was a load of shite and stay on call’",
+      C: "Say fucking hell while burying your head in your hands with the camera and mic still on’",
       D: "Drop a message in the chat then hang up"
     },
     answer: "C"
@@ -59,4 +59,16 @@ const quizQuestions = [
     },
     answer: "D"
   }
+],
+   {
+    question: "What's Pam's favourite Scottish Country Dance?",
+    options: {
+      A: "Canadian Barn Dance",
+      B: "Caesarian Circle",
+      C: "Orcadian Strip the Willow",
+      D: "Military Two Step"
+    },
+    answer: "D"
+       }
 ];
+  
