@@ -15,12 +15,12 @@ const quizQuestions = [
       A: "Magnify your screen",
       B: "Use a magnifying glass",
       C: "Get your eyes tested",
-      D: "Increase your font size for everyone"
+      D: "Increase your font size for everyone reading your emails."
     },
     answer: "D"
   },
   {
-    question: "In Pam Bain years how old is John Macbeath?",
+    question: "In Pam Bain years how old is John MacBeath?",
     options: {
       A: "28",
       B: "38",
@@ -40,11 +40,11 @@ const quizQuestions = [
     answer: "A"
   },
   {
-    question: "If you feel a teams meeting was a waste of time do you:",
+    question: "If you feel a Teams meeting was a waste of time do you:",
     options: {
       A: "Say goodbye and hang up",
       B: "Wave and hang up",
-      C: "Say fucking hell while burying your head in your hands with the camera and mic still on’",
+      C: "State ‘that was a load of shite’ and stay on the call",
       D: "Drop a message in the chat then hang up"
     },
     answer: "C"
@@ -58,17 +58,25 @@ const quizQuestions = [
       D: "The worst setup in her whole career"
     },
     answer: "D"
-  }
-],
-   {
-    question: "What's Pam's favourite Scottish Country Dance?",
+  },
+  {
+    question: "Your PE Department Head invites you and your colleagues out for a boozy lunch to the Mackays Hotel one weekday in term time. Do you:",
     options: {
-      A: "Canadian Barn Dance",
-      B: "Caesarian Circle",
-      C: "Orcadian Strip the Willow",
-      D: "Military Two Step"
+      A: "Reject the offer in the name of professionalism.",
+      B: "Go to lunch and drink only tap water.",
+      C: "Get snottered and let the S6 teach your afternoon classes",
+      D: "Take a lunchtime netball group instead."
+    },
+    answer: "C"
+  },
+  {
+    question: "You are teaching a Standard Grade basketball lesson. Your favourite pupil kicks out at an opponent who happens to be your least favourite pupil. Do you:",
+    options: {
+      A: "See the incident and shout ‘play on’ while smirking to yourself.",
+      B: "Blow the whistle and award a foul.",
+      C: "Stop the game and sanction the pupil with a displacement.",
+      D: "Stop the lesson immediately."
     },
     answer: "D"
-       }
+  }
 ];
-  
