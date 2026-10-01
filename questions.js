@@ -44,7 +44,7 @@ const quizQuestions = [
     options: {
       A: "Say goodbye and hang up",
       B: "Wave and hang up",
-      C: "State ‘that was a load of shite’ and stay on the call",
+      C: "Put your head in your hands and say fucking hell while still on the call",
       D: "Drop a message in the chat then hang up"
     },
     answer: "C"
@@ -77,6 +77,6 @@ const quizQuestions = [
       C: "Stop the game and sanction the pupil with a displacement.",
       D: "Stop the lesson immediately."
     },
-    answer: "D"
+    answer: "A"
   }
 ];
