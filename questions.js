@@ -98,15 +98,5 @@ const quizQuestions = [
       D: "Lexi Budge"
     },
     answer: "B"
-  },
-  {
-    question: "What music has Pam banned on the netball bus?",
-    options: {
-      A: "Bruce Springsteen",
-      B: "Heavy Metal",
-      C: "Doof Doof music",
-      D: "Ed Sheeran"
-    },
-    answer: "C"
   }
 ];
