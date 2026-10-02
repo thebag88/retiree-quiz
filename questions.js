@@ -50,6 +50,16 @@ const quizQuestions = [
     answer: "C"
   },
   {
+    question: "What music has Pam banned on the netball bus?",
+    options: {
+      A: "Bruce Springsteen",
+      B: "Heavy Metal",
+      C: "Doof Doof music",
+      D: "Ed Sheeran"
+    },
+    answer: "C"
+  },
+  {
     question: "How does Pam rate the current parents evening setup?",
     options: {
       A: "Excellent",
@@ -78,5 +88,25 @@ const quizQuestions = [
       D: "Stop the lesson immediately."
     },
     answer: "A"
+  },
+  {
+    question: "Which netballer gave Pam a concussion?",
+    options: {
+      A: "Carly Harrold",
+      B: "Sophie Mackenzie",
+      C: "Amy Duncan",
+      D: "Lexi Budge"
+    },
+    answer: "B"
+  },
+  {
+    question: "What music has Pam banned on the netball bus?",
+    options: {
+      A: "Bruce Springsteen",
+      B: "Heavy Metal",
+      C: "Doof Doof music",
+      D: "Ed Sheeran"
+    },
+    answer: "C"
   }
 ];
