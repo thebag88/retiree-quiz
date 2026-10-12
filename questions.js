@@ -1,102 +1,162 @@
 const quizQuestions = [
   {
-    question: "What does Pam call surveillance equipment?",
+    question: "What is Doreen’s favourite colour?",
     options: {
-      A: "CCTV",
-      B: "CTV",
-      C: "Camera Thingy’s",
-      D: "Video surveillance"
+      A: "Purple",
+      B: "Cerise pink",
+      C: "Green",
+      D: "Baby blue"
     },
     answer: "B"
   },
   {
-    question: "You realise your eyesight is failing and you can no longer read your emails. Do you:",
+    question: "What was Doreen’s first job?",
     options: {
-      A: "Magnify your screen",
-      B: "Use a magnifying glass",
-      C: "Get your eyes tested",
-      D: "Increase your font size for everyone reading your emails."
-    },
-    answer: "D"
-  },
-  {
-    question: "In Pam Bain years how old is John MacBeath?",
-    options: {
-      A: "28",
-      B: "38",
-      C: "48",
-      D: "58"
-    },
-    answer: "C"
-  },
-  {
-    question: "What is Pam’s most essential piece of office equipment?",
-    options: {
-      A: "Wireless plug in head phones.",
-      B: "Stapler",
-      C: "Laminator",
-      D: "Coffee machine"
+      A: "Working in the Council Offices",
+      B: "Working in Turner’s",
+      C: "Working in the Cliff bakery",
+      D: "Working in Woolies"
     },
     answer: "A"
   },
   {
-    question: "If you feel a Teams meeting was a waste of time do you:",
+    question: "What is Doreen’s favourite food?",
     options: {
-      A: "Say goodbye and hang up",
-      B: "Wave and hang up",
-      C: "Put your head in your hands and say fucking hell while still on the call",
-      D: "Drop a message in the chat then hang up"
+      A: "Chicken Korma",
+      B: "Fish & chips",
+      C: "Roast Beef & Yorkshire Puddings",
+      D: "Carbonara Pasta"
     },
     answer: "C"
   },
   {
-    question: "What music has Pam banned on the netball bus?",
+    question: "Where did Doreen first meet Alan?",
     options: {
-      A: "Bruce Springsteen",
-      B: "Heavy Metal",
-      C: "Doof Doof music",
-      D: "Ed Sheeran"
+      A: "At the Youth Club",
+      B: "At the Trinkie",
+      C: "At Wick High School",
+      D: "At the Bignold Park"
     },
     answer: "C"
   },
   {
-    question: "How does Pam rate the current parents evening setup?",
+    question: "What was the first thing she noticed about him?",
     options: {
-      A: "Excellent",
-      B: "Good",
-      C: "Average",
-      D: "The worst setup in her whole career"
-    },
-    answer: "D"
-  },
-  {
-    question: "Your PE Department Head invites you and your colleagues out for a boozy lunch to the Mackays Hotel one weekday in term time. Do you:",
-    options: {
-      A: "Reject the offer in the name of professionalism.",
-      B: "Go to lunch and drink only tap water.",
-      C: "Get snottered and let the S6 teach your afternoon classes",
-      D: "Take a lunchtime netball group instead."
+      A: "His sparkling eyes",
+      B: "His height",
+      C: "His cheeky comments about Ernie’s football skills",
+      D: "His sense of fashion"
     },
     answer: "C"
   },
   {
-    question: "You are teaching a Standard Grade basketball lesson. Your favourite pupil kicks out at an opponent who happens to be your least favourite pupil. Do you:",
+    question: "What song would Doreen most likely sing at karaoke?",
     options: {
-      A: "See the incident and shout ‘play on’ while smirking to yourself.",
-      B: "Blow the whistle and award a foul.",
-      C: "Stop the game and sanction the pupil with a displacement.",
-      D: "Stop the lesson immediately."
+      A: "When a Man Loves a Woman",
+      B: "Can't Help Falling in Love",
+      C: "Dancing Queen",
+      D: "Sweet Caroline"
     },
     answer: "A"
   },
   {
-    question: "Which netballer gave Pam a concussion?",
+    question: "What is Doreen’s favourite holiday destination?",
     options: {
-      A: "Carly Harrold",
-      B: "Sophie Mackenzie",
-      C: "Amy Duncan",
-      D: "Lexi Budge"
+      A: "Cyprus",
+      B: "Majorca",
+      C: "Spain",
+      D: "Croatia"
     },
     answer: "B"
+  },
+  {
+    question: "What is Doreen’s favourite sweetie?",
+    options: {
+      A: "Midget Gums",
+      B: "Sour Patch Kids",
+      C: "Wine Gums",
+      D: "Galaxy"
+    },
+    answer: "C"
+  },
+  {
+    question: "Which of these is something Doreen cannot stand?",
+    options: {
+      A: "People picking their nose",
+      B: "Spiders",
+      C: "People being rude",
+      D: "Mice"
+    },
+    answer: "D"
+  },
+  {
+    question: "If Doreen could have dinner with a famous person, who would it be?",
+    options: {
+      A: "Sir David Attenborough",
+      B: "Cliff Richard",
+      C: "Tom Jones",
+      D: "Paul McCartney"
+    },
+    answer: "B"
+  },
+  {
+    question: "What is Doreen’s favourite television programme?",
+    options: {
+      A: "Casualty & Corrie",
+      B: "EastEnders & Casualty",
+      C: "Corrie & Strictly",
+      D: "Traitors & Downton Abbey"
+    },
+    answer: "A"
+  },
+  {
+    question: "What is something Doreen has always wanted to do but has never got around to it?",
+    options: {
+      A: "Taken part in a cooking demonstration",
+      B: "Driven a double decker bus",
+      C: "Learned how to crochet",
+      D: "Been in a Wick Players production"
+    },
+    answer: "B"
+  },
+  {
+    question: "What is Doreen best known for within the family?",
+    options: {
+      A: "Her funny jokes",
+      B: "Her homemade pasta",
+      C: "Her kind, helpful & caring ways",
+      D: "Her love of animals"
+    },
+    answer: "C"
+  },
+  {
+    question: "What is Doreen’s most embarrassing family moment?",
+    options: {
+      A: "When she ran over Alan’s toes when reversing in the driveway",
+      B: "When she mistook a random tourist in Tesco for a childhood friend and subjected them to a 15-minute catch-up about people they’ve never met",
+      C: "When she accidentally treated the entire family WhatsApp group to a 10-minute voice note meant exclusively for Anne's ears",
+      D: "When she forgot to use PC language and complimented a customer about their beautiful “chocolate drop” grandchildren"
+    },
+    answer: "D"
+  },
+  {
+    question: "What did she get in trouble for the most when she was little?",
+    options: {
+      A: "Drawing a giant smiley face on the living room wall in permanent crayon",
+      B: "Accidentally drowning Grandad Bim’s greenhouse plants because she was \"helping\" water them every five minutes",
+      C: "Bickering with her big sister Anne",
+      D: "Sneaking a whole box of biscuits into bed and blaming it on Ernie"
+    },
+    answer: "C"
+  },
+  {
+    question: "What words would the family use most to describe Doreen?",
+    options: {
+      A: "Kind, funny, dependable, strong",
+      B: "Loving, thoughtful, brave, patient",
+      C: "The absolute best, unique, legend, helpful",
+      D: "All of the above"
+    },
+    answer: "D"
   }
 ];
