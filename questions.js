@@ -1,161 +1,151 @@
 const quizQuestions = [
   {
-    question: "What is Doreen’s favourite colour?",
+    question: "What is my favourite colour?",
     options: {
       A: "Purple",
-      B: "Cerise pink",
+      B: "Red",
       C: "Green",
-      D: "Baby blue"
+      D: "Brown"
+    },
+    answer: "C"
+  },
+  {
+    question: "What is my favourite chocolate?",
+    options: {
+      A: "Galaxy",
+      B: "Maltesers",
+      C: "KitKat",
+      D: "Dairy Milk"
     },
     answer: "B"
   },
   {
-    question: "What was Doreen’s first job?",
+    question: "What is my favourite wine?",
     options: {
-      A: "Working in the Council Offices",
-      B: "Working in Turner’s",
-      C: "Working in the Cliff bakery",
-      D: "Working in Woolies"
-    },
-    answer: "A"
-  },
-  {
-    question: "What is Doreen’s favourite food?",
-    options: {
-      A: "Chicken Korma",
-      B: "Fish & chips",
-      C: "Roast Beef & Yorkshire Puddings",
-      D: "Carbonara Pasta"
-    },
-    answer: "C"
-  },
-  {
-    question: "Where did Doreen first meet Alan?",
-    options: {
-      A: "At the Youth Club",
-      B: "At the Trinkie",
-      C: "At Wick High School",
-      D: "At the Bignold Park"
-    },
-    answer: "C"
-  },
-  {
-    question: "What was the first thing she noticed about him?",
-    options: {
-      A: "His sparkling eyes",
-      B: "His height",
-      C: "His cheeky comments about Ernie’s football skills",
-      D: "His sense of fashion"
-    },
-    answer: "C"
-  },
-  {
-    question: "What song would Doreen most likely sing at karaoke?",
-    options: {
-      A: "When a Man Loves a Woman",
-      B: "Can't Help Falling in Love",
-      C: "Dancing Queen",
-      D: "Sweet Caroline"
-    },
-    answer: "A"
-  },
-  {
-    question: "What is Doreen’s favourite holiday destination?",
-    options: {
-      A: "Cyprus",
-      B: "Majorca",
-      C: "Spain",
-      D: "Croatia"
-    },
-    answer: "B"
-  },
-  {
-    question: "What is Doreen’s favourite sweetie?",
-    options: {
-      A: "Midget Gums",
-      B: "Sour Patch Kids",
-      C: "Wine Gums",
-      D: "Galaxy"
-    },
-    answer: "C"
-  },
-  {
-    question: "Which of these is something Doreen cannot stand?",
-    options: {
-      A: "People picking their nose",
-      B: "Spiders",
-      C: "People being rude",
-      D: "Mice"
+      A: "Malbec",
+      B: "Sauvignon Blanc",
+      C: "Shiraz",
+      D: "Pinot Grigio"
     },
     answer: "D"
   },
   {
-    question: "If Doreen could have dinner with a famous person, who would it be?",
+    question: "If I could only eat one food every day for the rest of my life, what would it be?",
     options: {
-      A: "Sir David Attenborough",
-      B: "Cliff Richard",
-      C: "Tom Jones",
-      D: "Paul McCartney"
-    },
-    answer: "B"
-  },
-  {
-    question: "What is Doreen’s favourite television programme?",
-    options: {
-      A: "Casualty & Corrie",
-      B: "EastEnders & Casualty",
-      C: "Corrie & Strictly",
-      D: "Traitors & Downton Abbey"
+      A: "Bread",
+      B: "Chocolate",
+      C: "Eggs",
+      D: "Cheese"
     },
     answer: "A"
   },
   {
-    question: "What is something Doreen has always wanted to do but has never got around to it?",
+    question: "What is my biggest fear?",
     options: {
-      A: "Taken part in a cooking demonstration",
-      B: "Driven a double decker bus",
-      C: "Learned how to crochet",
-      D: "Been in a Wick Players production"
+      A: "Spiders",
+      B: "Mice",
+      C: "Heights",
+      D: "Enclosed spaces"
+    },
+    answer: "C"
+  },
+  {
+    question: "What is my biggest pet peeve?",
+    options: {
+      A: "Rudeness",
+      B: "Nose picking",
+      C: "Dishes left on top of the dishwasher",
+      D: "Spitting"
     },
     answer: "B"
   },
   {
-    question: "What is Doreen best known for within the family?",
+    question: "What song instantly cheers me up?",
     options: {
-      A: "Her funny jokes",
-      B: "Her homemade pasta",
-      C: "Her kind, helpful & caring ways",
-      D: "Her love of animals"
+      A: "Wake Up Boo",
+      B: "Boogie Wonderland",
+      C: "Mr Blue Sky",
+      D: "Take on Me"
     },
     answer: "C"
   },
   {
-    question: "What is Doreen’s most embarrassing family moment?",
+    question: "What would I spend a million on?",
     options: {
-      A: "When she ran over Alan’s toes when reversing in the driveway",
-      B: "When she mistook a random tourist in Tesco for a childhood friend and subjected them to a 15-minute catch-up about people they’ve never met",
-      C: "When she accidentally treated the entire family WhatsApp group to a 10-minute voice note meant exclusively for Anne's ears",
-      D: "When she forgot to use PC language and complimented a customer about their beautiful “chocolate drop” grandchildren"
+      A: "New car",
+      B: "Caribbean holiday",
+      C: "New house",
+      D: "Retirement"
     },
     answer: "D"
   },
   {
-    question: "What did she get in trouble for the most when she was little?",
+    question: "What was the first concert I attended?",
     options: {
-      A: "Drawing a giant smiley face on the living room wall in permanent crayon",
-      B: "Accidentally drowning Grandad Bim’s greenhouse plants because she was \"helping\" water them every five minutes",
-      C: "Bickering with her big sister Anne",
-      D: "Sneaking a whole box of biscuits into bed and blaming it on Ernie"
+      A: "Bryan Adams",
+      B: "A-ha",
+      C: "The Corrs",
+      D: "Chuck Berry"
+    },
+    answer: "B"
+  },
+  {
+    question: "What is a skill I would have wanted to learn but haven't?",
+    options: {
+      A: "Drumming",
+      B: "Crocheting",
+      C: "Playing cricket",
+      D: "Drag flicking"
+    },
+    answer: "A"
+  },
+  {
+    question: "What one thing would I want with me if stranded on a desert island?",
+    options: {
+      A: "Camera",
+      B: "Phone",
+      C: "TV",
+      D: "Bed"
+    },
+    answer: "D"
+  },
+  {
+    question: "What is my most used emoji?",
+    options: {
+      A: "🫣",
+      B: "👍",
+      C: "😆",
+      D: "😉"
     },
     answer: "C"
   },
   {
-    question: "What words would the family use most to describe Doreen?",
+    question: "What year did I graduate?",
     options: {
-      A: "Kind, funny, dependable, strong",
-      B: "Loving, thoughtful, brave, patient",
-      C: "The absolute best, unique, legend, helpful",
-      D: "All of the above"
+      A: "1996",
+      B: "1998",
+      C: "1997",
+      D: "1999"
+    },
+    answer: "B"
+  },
+  {
+    question: "Where is my favourite holiday destination?",
+    options: {
+      A: "Caribbean",
+      B: "Dubai",
+      C: "Italy",
+      D: "Iceland"
+    },
+    answer: "A"
+  },
+  {
+    question: "What date was I due to be born on?",
+    options: {
+      A: "29th November",
+      B: "1st December",
+      C: "28th November",
+      D: "30th November"
     },
     answer: "D"
   }
